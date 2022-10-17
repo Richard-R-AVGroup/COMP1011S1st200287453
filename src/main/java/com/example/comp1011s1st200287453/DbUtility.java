@@ -1,5 +1,7 @@
 package com.example.comp1011s1st200287453;
 
+import javafx.scene.chart.XYChart;
+
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.sql.*;

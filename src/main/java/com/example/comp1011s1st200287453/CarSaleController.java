@@ -3,6 +3,7 @@ package com.example.comp1011s1st200287453;
 import javafx.collections.ObservableArray;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.chart.BarChart;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
@@ -17,6 +18,8 @@ import java.util.ResourceBundle;
 
 public class CarSaleController implements Initializable {
 
+    @FXML
+    private BarChart<?, ?> barChart;
 
     @FXML
     private TableColumn<CarSold, Integer> carID;
@@ -71,5 +74,8 @@ public class CarSaleController implements Initializable {
         String finalSales = formatter1.format(DbUtility.getNetCarSales());
         unitsSoldLabel.setText("Units Sold: " + DbUtility.getTotalCarSales());
         totalSalesLabel.setText("Total Sales: " + finalSales);
+
+        barChart.setLegendVisible(false);
+        //barChart.getData().addAll()
     }
 }
