@@ -11,7 +11,7 @@ public class CarSaleApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(CarSaleApplication.class.getResource("application-view.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 320, 240);
+        Scene scene = new Scene(fxmlLoader.load());
         stage.setTitle("Car Sales Application");
         stage.setScene(scene);
         stage.show();
