@@ -95,4 +95,29 @@ public class DbUtility {
         }
         return carSales;
     }
+
+    public static int getNetCarSales()
+    {
+        int salesTotal = 0;
+
+        String sql = "SELECT * " +
+                "FROM carsales;";
+
+        try (
+                Connection con = DriverManager.getConnection(connectionURL, uName, pass);
+                Statement statement = con.createStatement();
+                ResultSet resultSet = statement.executeQuery(sql);
+        )
+        {
+            while (resultSet.next())
+            {
+                salesTotal += resultSet.getFloat("price");
+            }
+        }
+        catch (Exception e)
+        {
+            e.printStackTrace();
+        }
+        return salesTotal;
+    }
 }

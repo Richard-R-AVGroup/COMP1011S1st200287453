@@ -10,6 +10,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 
 import java.net.URL;
+import java.text.NumberFormat;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
@@ -65,6 +66,10 @@ public class CarSaleController implements Initializable {
         ArrayList carYear = DbUtility.getCarYears();;
         yearComboBox.getItems().addAll(carYear);
 
+
+        NumberFormat formatter1 = NumberFormat.getCurrencyInstance();
+        String finalSales = formatter1.format(DbUtility.getNetCarSales());
         unitsSoldLabel.setText("Units Sold: " + DbUtility.getTotalCarSales());
+        totalSalesLabel.setText("Total Sales: " + finalSales);
     }
 }
