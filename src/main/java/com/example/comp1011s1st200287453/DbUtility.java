@@ -47,8 +47,9 @@ public class DbUtility {
     {
         ArrayList<Integer> carYearList = new ArrayList<>();
 
-        String sql = "SELECT modelYear " +
-                     "FROM carsales";
+        String sql = "SELECT DISTINCT modelYear " +
+                     "FROM carsales " +
+                     "ORDER BY carsales.modelYear DESC";
 
         try (
                 Connection con = DriverManager.getConnection(connectionURL, uName, pass);
@@ -56,9 +57,12 @@ public class DbUtility {
                 ResultSet resultSet = statement.executeQuery(sql);
                 )
         {
-            int modelYear = resultSet.getInt("modelYear");
+            while(resultSet.next())
+            {
+                int modelYear = resultSet.getInt("modelYear");
 
-            carYearList.add(modelYear);
+                carYearList.add(modelYear);
+            }
         }
         catch (Exception e)
         {
@@ -66,5 +70,4 @@ public class DbUtility {
         }
         return carYearList;
     }
-
 }

@@ -1,7 +1,9 @@
 package com.example.comp1011s1st200287453;
 
+import javafx.collections.ObservableArray;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -35,6 +37,10 @@ public class CarSaleController implements Initializable {
     @FXML
     private TableView<CarSold> table;
 
+    @FXML
+    private ComboBox<?> yearComboBox;
+
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
@@ -47,5 +53,9 @@ public class CarSaleController implements Initializable {
 
         //ArrayList<CarSold> carSolds = DbUtility.getCarsSold();
         table.getItems().addAll(DbUtility.getCarsSold());
+
+        ArrayList<Integer> carYears = DbUtility.getCarYears();
+        ArrayList carYear = DbUtility.getCarYears();;
+        yearComboBox.getItems().addAll(carYear);
     }
 }
