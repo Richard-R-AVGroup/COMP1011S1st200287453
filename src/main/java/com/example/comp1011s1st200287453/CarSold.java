@@ -51,7 +51,7 @@ public class CarSold {
         if (make.length() > 1)
             this.make = make;
         else
-            throw new IllegalArgumentException("You must enter a make")
+            throw new IllegalArgumentException("You must enter a make");
     }
 
     public String getModel() {
