@@ -5,15 +5,15 @@ import java.time.LocalDateTime;
 
 public class CarSold {
 
-    private int carId;
+    private int carID;
     private int modelYear;
     private String make;
     private String model;
     private float price;
     private LocalDate dateSold;
 
-    public CarSold(int carId, int modelYear, String make, String model, float price, LocalDate dateSold) {
-        this.carId = carId;
+    public CarSold(int carID, int modelYear, String make, String model, float price, LocalDate dateSold) {
+        this.carID = carID;
         this.modelYear = modelYear;
         this.make = make;
         this.model = model;
@@ -21,13 +21,13 @@ public class CarSold {
         this.dateSold = dateSold;
     }
 
-    public int getCarId() {
-        return carId;
+    public int getCarID() {
+        return carID;
     }
 
-    public void setCarId(int carId) {
+    public void setCarID(int carId) {
         if (carId > 0)
-            this.carId = carId;
+            this.carID = carId;
         else
             throw new IllegalArgumentException("The car Id must be greater than 0");
     }

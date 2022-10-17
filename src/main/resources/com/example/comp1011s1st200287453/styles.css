@@ -1,5 +1,5 @@
 .root{
-    -fx-font-size: 20pt;
+    -fx-font-size: 18pt;
 }
 .chart-bar {
     -fx-background-color: rgba(0,168,355,0.05);

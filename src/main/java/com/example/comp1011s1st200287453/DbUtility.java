@@ -23,15 +23,17 @@ public class DbUtility {
                 ResultSet resultSet = statement.executeQuery(sql);
                 )
         {
-            int carId = resultSet.getInt("carId");
-            int modelYear = resultSet.getInt("modelYear");
-            String make = resultSet.getString("make");
-            String model = resultSet.getString("model");
-            float price = resultSet.getFloat("price");
-            LocalDate dateSold = resultSet.getDate("dateSold").toLocalDate();
+            while (resultSet.next()) {
+                int carId = resultSet.getInt("carID");
+                int modelYear = resultSet.getInt("modelYear");
+                String make = resultSet.getString("make");
+                String model = resultSet.getString("model");
+                float price = resultSet.getFloat("price");
+                LocalDate dateSold = resultSet.getDate("dateSold").toLocalDate();
 
-            CarSold carSold = new CarSold(carId,modelYear,make,model,price,dateSold);
-            carsSold.add(carSold);
+                CarSold carSold = new CarSold(carId, modelYear, make, model, price, dateSold);
+                carsSold.add(carSold);
+            }
         }
         catch (Exception e)
         {

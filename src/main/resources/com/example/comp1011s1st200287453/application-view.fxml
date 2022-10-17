@@ -16,14 +16,14 @@
     <padding>
         <Insets bottom="20.0" left="20.0" right="20.0" />
     </padding>
-   <TableView>
+   <TableView fx:id="table">
      <columns>
-       <TableColumn fx:id="carID" prefWidth="75.0" text="Car ID" />
-       <TableColumn fx:id="modelYear" prefWidth="75.0" text="Model Year" />
-         <TableColumn fx:id="make" prefWidth="75.0" text="Make" />
-         <TableColumn fx:id="model" prefWidth="75.0" text="Model" />
-         <TableColumn fx:id="price" prefWidth="75.0" text="Price" />
-         <TableColumn fx:id="dateSold" prefWidth="75.0" text="Date Sold" />
+       <TableColumn fx:id="carID" minWidth="150.0" prefWidth="-1.0" text="Car ID" />
+       <TableColumn fx:id="modelYear" minWidth="150.0" prefWidth="-1.0" text="Model Year" />
+         <TableColumn fx:id="make" minWidth="150.0" prefWidth="-1.0" text="Make" />
+         <TableColumn fx:id="model" minWidth="150.0" prefWidth="-1.0" text="Model" />
+         <TableColumn fx:id="price" minWidth="150.0" prefWidth="-1.0" text="Price" />
+         <TableColumn fx:id="dateSold" minWidth="150.0" prefWidth="-1.0" text="Date Sold" />
      </columns>
    </TableView>
    <HBox minHeight="-Infinity" minWidth="-Infinity" VBox.vgrow="ALWAYS">
@@ -36,12 +36,12 @@
              <NumberAxis side="LEFT" />
            </yAxis>
          </BarChart>
-         <VBox alignment="TOP_CENTER" HBox.hgrow="ALWAYS">
+         <VBox alignment="TOP_CENTER" prefWidth="0.0" HBox.hgrow="ALWAYS">
             <children>
-               <HBox alignment="TOP_CENTER" prefHeight="42.0" prefWidth="267.0" spacing="217.0">
+               <HBox alignment="TOP_CENTER" prefHeight="42.0" prefWidth="267.0">
                   <children>
-                     <Label text="Units Sold: 1080" />
-                     <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" text="Total Sales: 000000000000" />
+                     <Label prefHeight="39.0" prefWidth="472.0" text="Units Sold: 1080" />
+                     <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" prefHeight="39.0" prefWidth="582.0" text="Total Sales: 000000000000" />
                   </children>
                </HBox>
                <SplitMenuButton mnemonicParsing="false" text="SplitMenuButton">
