@@ -75,7 +75,7 @@ public class CarSaleController implements Initializable {
         unitsSoldLabel.setText("Units Sold: " + DbUtility.getTotalCarSales());
         totalSalesLabel.setText("Total Sales: " + finalSales);
 
-        barChart.setLegendVisible(false);
+        //barChart.setLegendVisible(false);
         //barChart.getData().addAll()
     }
 }
