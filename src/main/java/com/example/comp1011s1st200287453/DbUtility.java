@@ -15,7 +15,7 @@ public class DbUtility {
         ArrayList<CarSold> carsSold = new ArrayList<>();
 
         String sql = "SELECT * " +
-                "FROM carsales";
+                     "FROM carsales";
 
         try(
                 Connection con = DriverManager.getConnection(connectionURL, uName, pass);
@@ -39,6 +39,30 @@ public class DbUtility {
         }
 
         return carsSold;
+    }
+
+    public static ArrayList<Integer> getCarYears()
+    {
+        ArrayList<Integer> carYearList = new ArrayList<>();
+
+        String sql = "SELECT modelYear " +
+                     "FROM carsales";
+
+        try (
+                Connection con = DriverManager.getConnection(connectionURL, uName, pass);
+                Statement statement = con.createStatement();
+                ResultSet resultSet = statement.executeQuery(sql);
+                )
+        {
+            int modelYear = resultSet.getInt("modelYear");
+
+            carYearList.add(modelYear);
+        }
+        catch (Exception e)
+        {
+            e.printStackTrace();
+        }
+        return carYearList;
     }
 
 }
