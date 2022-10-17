@@ -4,6 +4,7 @@ import javafx.collections.ObservableArray;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -40,6 +41,12 @@ public class CarSaleController implements Initializable {
     @FXML
     private ComboBox<?> yearComboBox;
 
+    @FXML
+    private Label totalSalesLabel;
+
+    @FXML
+    private Label unitsSoldLabel;
+
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -57,5 +64,7 @@ public class CarSaleController implements Initializable {
         ArrayList<Integer> carYears = DbUtility.getCarYears();
         ArrayList carYear = DbUtility.getCarYears();;
         yearComboBox.getItems().addAll(carYear);
+
+        unitsSoldLabel.setText("Units Sold: " + DbUtility.getTotalCarSales());
     }
 }

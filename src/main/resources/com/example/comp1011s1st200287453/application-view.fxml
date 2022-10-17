@@ -39,8 +39,8 @@
             <children>
                <HBox alignment="TOP_CENTER" prefHeight="42.0" prefWidth="267.0">
                   <children>
-                     <Label prefHeight="39.0" prefWidth="472.0" text="Units Sold: 1080" />
-                     <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" prefHeight="39.0" prefWidth="582.0" text="Total Sales: 000000000000" />
+                     <Label fx:id="unitsSoldLabel" prefHeight="39.0" prefWidth="472.0" text="Units Sold: 1080" />
+                     <Label fx:id="totalSalesLabel" alignment="CENTER_RIGHT" contentDisplay="RIGHT" prefHeight="39.0" prefWidth="582.0" text="Total Sales: 000000000000" />
                   </children>
                </HBox>
                <ComboBox fx:id="yearComboBox" prefHeight="50.0" prefWidth="226.0" promptText="Filter By Year" />

@@ -70,4 +70,29 @@ public class DbUtility {
         }
         return carYearList;
     }
+
+    public static int getTotalCarSales()
+    {
+        int carSales = 0;
+
+        String sql = "SELECT * " +
+                "FROM carsales;";
+
+        try (
+                Connection con = DriverManager.getConnection(connectionURL, uName, pass);
+                Statement statement = con.createStatement();
+                ResultSet resultSet = statement.executeQuery(sql);
+        )
+        {
+            while (resultSet.next())
+            {
+                carSales++;
+            }
+        }
+        catch (Exception e)
+        {
+            e.printStackTrace();
+        }
+        return carSales;
+    }
 }
