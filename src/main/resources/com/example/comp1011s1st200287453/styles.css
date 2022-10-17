@@ -1,0 +1,15 @@
+.root{
+    -fx-font-size: 20pt;
+}
+.chart-bar {
+    -fx-background-color: rgba(0,168,355,0.05);
+    -fx-border-color: rgba(0,168,355,0.3) rgba(0,168,355,0.3)
+    transparent rgba(0,168,355,0.3);
+    -fx-background-radius: 0;
+    -fx-background-position: left center;
+}
+
+#header{
+    -fx-font-size: 35pt;
+    -fx-font-weight: bold;
+}
