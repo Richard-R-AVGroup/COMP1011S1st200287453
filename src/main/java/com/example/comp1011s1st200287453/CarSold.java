@@ -13,12 +13,12 @@ public class CarSold {
     private LocalDate dateSold;
 
     public CarSold(int carID, int modelYear, String make, String model, float price, LocalDate dateSold) {
-        this.carID = carID;
-        this.modelYear = modelYear;
-        this.make = make;
-        this.model = model;
-        this.price = price;
-        this.dateSold = dateSold;
+        setCarID(carID);
+        setModelYear(modelYear);
+        setMake(make);
+        setModel(model);
+        setPrice(price);
+        setDateSold(dateSold);
     }
 
     public int getCarID() {
@@ -44,14 +44,25 @@ public class CarSold {
     }
 
     public String getMake() {
-        return make;
+        return this.make;
     }
 
     public void setMake(String make) {
         if (make.length() > 1)
-            this.make = make;
+            switch(make.toLowerCase())
+            {
+                case "acura":
+                case "ford":
+                case "honda":
+                case "nissan":
+                case "tesla":
+                    this.make = make;
+                    break;
+                default:
+                    break;
+            }
         else
-            throw new IllegalArgumentException("You must enter a make");
+            throw new IllegalArgumentException("The model must be Acura, Ford, Honda, Nissan or Tesla");
     }
 
     public String getModel() {
@@ -81,9 +92,12 @@ public class CarSold {
     }
 
     public void setDateSold(LocalDate dateSold) {
-        if (dateSold.getYear() <= LocalDateTime.now().getYear() && dateSold.getDayOfYear() <= LocalDateTime.now().getDayOfYear())
+        if (dateSold.getYear() <= LocalDateTime.now().getYear())
             this.dateSold = dateSold;
         else
+        {
+            System.out.println("Year:" + dateSold.getYear() + ", Locale " + LocalDateTime.now().getYear());
             throw new IllegalArgumentException("The date must be either today or in the past ");
+        }
     }
 }

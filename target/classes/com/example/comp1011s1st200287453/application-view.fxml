@@ -27,7 +27,7 @@
    </TableView>
    <HBox minHeight="-Infinity" minWidth="-Infinity" VBox.vgrow="ALWAYS">
       <children>
-         <BarChart prefHeight="150.0">
+         <BarChart fx:id="barChart" prefHeight="150.0">
            <xAxis>
              <CategoryAxis side="BOTTOM" />
            </xAxis>
@@ -43,7 +43,7 @@
                      <Label fx:id="totalSalesLabel" alignment="CENTER_RIGHT" contentDisplay="RIGHT" prefHeight="39.0" prefWidth="582.0" text="Total Sales: 000000000000" />
                   </children>
                </HBox>
-               <ComboBox fx:id="yearComboBox" prefHeight="50.0" prefWidth="226.0" promptText="Filter By Year" />
+               <ComboBox fx:id="yearComboBox" onAction="#updateChart" prefHeight="50.0" prefWidth="226.0" promptText="Filter By Year Sold" />
             </children>
          </VBox>
       </children>
